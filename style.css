@@ -36,6 +36,8 @@ body {
     background-color: var(--dark-bg);
     color: var(--text-light);
     overflow-x: hidden;
+    /* FIX: Remove a margem padrão do navegador que causa as linhas brancas */
+    margin: 0; 
 }
 
 /* --- Seções Principais e Layout --- */
