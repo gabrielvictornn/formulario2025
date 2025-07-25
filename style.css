@@ -1,330 +1,156 @@
-:root {
-    /* Paleta de Cores Oficial Sicoob */
-    --sicoob-green: #00995c;
-    --sicoob-dark-green: #003641;
-    --sicoob-light-green: #C9D200;
-    --sicoob-medium-green: #7DB61C;
-    --sicoob-purple: #49479D;
-    --sicoob-white: #FFFFFF;
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copa Comunica Sicoob Nordeste 2025 | Participe Agora!</title>
+    
+    <!-- Ícones e Fontes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    /* Mapeamento para o design do site oficial */
-    --page-bg: var(--sicoob-white);
-    --container-bg: var(--sicoob-white);
-    --primary-accent: var(--sicoob-green);
-    --secondary-accent: var(--sicoob-dark-green);
-    --highlight-green: var(--sicoob-medium-green);
-    --text-color: #333;
-    --text-light: #f8f9fa;
-    --border-color: #ced4da;
-    --input-bg: #f8f9fa;
-    --border-radius: 8px;
-    --error-color: #d93025;
-    --font-family: 'Poppins', sans-serif;
-}
+    <!-- Link para o arquivo de estilos CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-/* --- Reset Básico e Fundo Temático --- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    <div class="page-wrapper">
+        <!-- Seção Hero -->
+        <section class="hero">
+            <img src="https://logodownload.org/wp-content/uploads/2017/11/sicoob-logo-2.png" alt="Logo Sicoob" class="logo">
+            <h1>Copa Comunica 2025</h1>
+            <p>Eleve a comunicação da sua agência a um novo patamar e mostre que o Sicoob Nordeste é referência em excelência e inovação.</p>
+            <a href="#form-section" class="cta-button">
+                <span class="button-text">Participar Agora!</span>
+            </a>
+        </section>
 
-html {
-    scroll-behavior: smooth;
-}
+        <!-- Seção de Regulamento -->
+        <section class="content-section reveal">
+            <h2 class="section-title">Regulamento e Prêmios</h2>
+            <div class="grid-container">
+                <div class="info-card">
+                    <h3><i class="fas fa-bullseye"></i> Objetivo</h3>
+                    <p>Incentivar e reconhecer a excelência na aplicação da identidade visual, na manutenção dos ambientes e na execução de ações de comunicação.</p>
+                </div>
+                <div class="info-card">
+                    <h3><i class="fas fa-calendar-alt"></i> Período</h3>
+                    <ul>
+                        <li><strong>Participação:</strong> 01/08/2025 a 31/12/2025</li>
+                        <li><strong>Apuração Final:</strong> 01/01/2026 a 01/02/2026</li>
+                    </ul>
+                </div>
+                 <div class="info-card">
+                    <h3><i class="fas fa-gavel"></i> Regras Gerais</h3>
+                    <ul>
+                        <li>Todas as cooperativas singulares filiadas já estão participando.</li>
+                        <li>O uso do app <strong>Timemark</strong> para as fotos é obrigatório.</li>
+                        <li>O desempate considera criatividade e engajamento da equipe.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-body {
-    font-family: var(--font-family);
-    background-color: var(--page-bg);
-    color: var(--text-color);
-    overflow-x: hidden;
-    margin: 0; 
-}
+        <!-- Seção do Formulário -->
+        <section id="form-section" class="content-section reveal">
+            <h2 class="section-title">Formulário de Envio</h2>
+            <form id="submission-form" novalidate>
+                <fieldset>
+                    <legend>1. Identificação</legend>
+                    <div class="form-group">
+                        <label for="cooperativa">Nome da Cooperativa Singular:</label>
+                        <input type="text" id="cooperativa" name="cooperativa" required>
+                        <div class="error-message"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="pa">Nome e/ou Número do PA:</label>
+                        <input type="text" id="pa" name="pa" required>
+                        <div class="error-message"></div>
+                    </div>
+                </fieldset>
 
-/* --- Seções Principais e Layout --- */
-.page-wrapper {
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    padding: 2rem 1rem;
-}
+                <fieldset>
+                    <legend>2. Checklist de Evidências</legend>
+                    <p class="form-hint">Anexe os arquivos para um ou mais critérios abaixo. Você pode enviar novas evidências a qualquer momento durante a campanha.</p>
+                    
+                    <div class="criterion-block">
+                        <div class="criterion-header"><i class="fas fa-store-alt"></i><h4>Fachada Atualizada</h4><span class="points">30 pts</span></div>
+                        <label for="file-fachada" class="file-label"><i class="fas fa-upload"></i> Anexar Fotos da Fachada</label>
+                        <input type="file" id="file-fachada" data-criterion="fachada" class="file-input" multiple accept="image/*,video/*">
+                        <div class="file-preview"></div>
+                    </div>
+                    
+                    <div class="criterion-block">
+                        <div class="criterion-header"><i class="fas fa-map-signs"></i><h4>Sinalização Externa</h4><span class="points">10 pts</span></div>
+                        <label for="file-totem" class="file-label"><i class="fas fa-upload"></i> Anexar Fotos do Totem/Placa</label>
+                        <input type="file" id="file-totem" data-criterion="totem" class="file-input" multiple accept="image/*,video/*">
+                        <div class="file-preview"></div>
+                    </div>
 
-.content-section {
-    max-width: 900px;
-    margin: 4rem auto;
-    background: var(--container-bg);
-    color: var(--text-color);
-    border-radius: var(--border-radius);
-    padding: clamp(1.5rem, 5vw, 3rem);
-    border: 1px solid #e9ecef;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
+                    <!-- Adicione mais blocos aqui conforme necessário -->
 
-.section-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    text-align: center;
-    color: var(--secondary-accent);
-    margin-bottom: 2.5rem;
-    padding-bottom: 1rem;
-    border-bottom: 2px solid var(--primary-accent);
-}
+                </fieldset>
+                
+                <fieldset>
+                    <legend>3. Finalização</legend>
+                     <div class="form-group">
+                        <label for="descricao">Descrição Geral (Opcional):</label>
+                        <textarea id="descricao" name="descricao" rows="3" placeholder="Adicione aqui qualquer comentário relevante sobre os arquivos enviados."></textarea>
+                    </div>
+                    <div class="form-group-checkbox">
+                        <input type="checkbox" id="timemark" name="timemark" required>
+                        <label for="timemark" class="checkbox-label">
+                            <span class="checkbox-custom"></span>
+                            Confirmo que TODAS as fotos foram tiradas com o app <strong>Timemark</strong>.
+                        </label>
+                        <div class="error-message"></div>
+                    </div>
+                </fieldset>
 
-.hero {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 80vh; /* Reduzido para um visual mais de site */
-    text-align: center;
-    background: var(--text-light);
-    padding: 2rem;
-}
+                <button type="submit" id="submit-button" class="cta-button" style="width: 100%;">
+                    <div class="spinner"></div>
+                    <span class="button-text">Enviar Evidências</span>
+                </button>
+                <div id="form-message"></div>
+            </form>
+        </main>
+    </div>
 
-.hero .logo {
-    max-width: 220px;
-    margin-bottom: 2rem;
-}
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+        import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+        import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-storage.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js";
 
-.hero h1 {
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
-    font-weight: 700;
-    color: var(--secondary-accent);
-    margin-bottom: 1rem;
-    background: none;
-    -webkit-background-clip: unset;
-    -webkit-text-fill-color: unset;
-}
+        // --- Animações de Rolagem ---
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, { threshold: 0.1 });
+        revealElements.forEach(el => revealObserver.observe(el));
 
-.hero p {
-    font-size: clamp(1rem, 2.5vw, 1.25rem);
-    max-width: 600px;
-    margin-bottom: 2.5rem;
-    color: var(--text-color);
-}
+        // --- Lógica do Firebase e Formulário ---
+        let app, db, storage, auth;
 
-.cta-button {
-    font-family: var(--font-family);
-    font-size: 1.1rem;
-    font-weight: 600;
-    text-decoration: none;
-    color: var(--sicoob-white);
-    background: var(--primary-accent); /* Cor sólida como no site */
-    padding: 16px 32px;
-    border-radius: var(--border-radius);
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: inline-block;
-    position: relative;
-}
+        async function initializeFirebase() {
+            try {
+                if (typeof __firebase_config === 'undefined') {
+                    throw new Error("Configuração do Firebase não encontrada.");
+                }
+                const firebaseConfig = JSON.parse(__firebase_config);
+                app = initializeApp(firebaseConfig);
+                db = getFirestore(app);
+                storage = getStorage(app);
+                auth = getAuth(app);
 
-.cta-button:hover {
-    background: var(--secondary-accent);
-    transform: translateY(-3px);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-
-/* --- Seção de Regulamento e Prêmios --- */
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-}
-
-.info-card {
-    background: var(--input-bg);
-    padding: 1.5rem;
-    border-radius: var(--border-radius);
-    border: 1px solid var(--border-color);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.info-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-}
-
-.info-card h3 {
-    color: var(--primary-accent);
-    margin-bottom: 1rem;
-}
-
-.info-card ul {
-    list-style: none;
-    padding-left: 0;
-}
-
-.info-card li {
-    margin-bottom: 0.75rem;
-    padding-left: 1.5rem;
-    position: relative;
-}
-
-.info-card li::before {
-    content: '✓';
-    color: var(--highlight-green);
-    position: absolute;
-    left: 0;
-    font-weight: bold;
-}
-
-.prize-list h3 {
-    text-align: center;
-    margin-top: 1rem;
-    color: var(--secondary-accent);
-}
-
-.prize-item {
-    display: flex;
-    align-items: center;
-    background: #f8f9fa;
-    padding: 1rem;
-    border-radius: 8px;
-    margin-bottom: 1rem;
-    border: 1px solid var(--border-color);
-}
-.prize-item i {
-    font-size: 1.5rem;
-    color: var(--primary-accent);
-    margin-right: 1rem;
-}
-
-/* --- Estilos do Formulário --- */
-form fieldset {
-    border: 0;
-    padding: 0;
-    margin: 0;
-    margin-bottom: 2rem;
-}
-
-legend {
-    font-size: 1.8rem;
-    font-weight: 600;
-    color: var(--secondary-accent);
-    margin-bottom: 2rem;
-    width: 100%;
-    border-bottom: 1px solid var(--primary-accent);
-    padding-bottom: 1rem;
-}
-
-.form-group { margin-bottom: 1.5rem; position: relative; }
-
-label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-    color: var(--text-color);
-}
-
-input[type="text"], textarea {
-    width: 100%;
-    padding: 14px;
-    background: var(--sicoob-white);
-    border: 1px solid var(--border-color);
-    border-radius: var(--border-radius);
-    color: var(--text-color);
-    font-family: var(--font-family);
-    font-size: 1rem;
-    transition: all 0.3s ease;
-}
-
-input[type="text"]:focus, textarea:focus {
-    outline: none;
-    border-color: var(--primary-accent);
-    box-shadow: 0 0 0 3px rgba(0, 153, 92, 0.25);
-}
-
-input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus, 
-input:-webkit-autofill:active {
-    -webkit-box-shadow: 0 0 0 30px var(--sicoob-white) inset !important;
-    -webkit-text-fill-color: var(--text-color) !important;
-}
-
-.file-label {
-    display: inline-block;
-    padding: 12px 20px;
-    background: #e9ecef;
-    color: var(--text-color);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-.file-label:hover { 
-    background: #dee2e6; 
-    border-color: #adb5bd;
-}
-.file-input { display: none; }
-.file-preview { margin-top: 10px; font-size: 0.9em; color: #6c757d; }
-
-.support-links {
-    text-align: center;
-    margin-top: 2rem;
-}
-.support-links .cta-button {
-    margin: 0.5rem;
-}
-
-.success-message {
-    color: #0f5132; 
-    background-color: #d1e7dd;
-    border: 1px solid #badbcc; 
-    padding: 1rem;
-    border-radius: 8px; 
-    text-align: center; 
-    margin-top: 1.5rem; 
-    display: none;
-}
-
-.error-message {
-    color: var(--error-color);
-    font-size: 0.875rem;
-    margin-top: 5px;
-}
-input.invalid {
-    border-color: var(--error-color) !important;
-    box-shadow: 0 0 0 3px rgba(217, 48, 37, 0.25) !important;
-}
-
-/* --- Animações de Rolagem --- */
-.reveal {
-    position: relative;
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* --- Estilo do Spinner de Carregamento --- */
-.spinner {
-    width: 20px;
-    height: 20px;
-    border: 3px solid rgba(255, 255, 255, 0.3);
-    border-radius: 50%;
-    border-top-color: var(--sicoob-white);
-    animation: spin 1s ease-in-out infinite;
-    display: none; /* Escondido por padrão */
-}
-
-@keyframes spin {
-    to { transform: rotate(360deg); }
-}
-
-.cta-button.loading .button-text {
-    visibility: hidden;
-    opacity: 0;
-}
-
-.cta-button.loading .spinner {
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
+                if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
+                    await signInWithCustomToken(auth, __initial_auth_token);
+                } else {
+                    await signInAnonymously(auth);
+                }
+            } catch (error) {
+                console.error("Erro ao inicializar o Firebase
