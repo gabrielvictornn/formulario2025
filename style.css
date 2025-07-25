@@ -36,7 +36,6 @@ body {
     background-color: var(--dark-bg);
     color: var(--text-light);
     overflow-x: hidden;
-    /* FIX: Remove a margem padrão do navegador que causa as linhas brancas */
     margin: 0; 
 }
 
@@ -179,6 +178,14 @@ body {
 }
 
 /* --- Estilos do Formulário --- */
+/* FIX: Remove a borda padrão do fieldset que causa as linhas brancas */
+fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 2rem;
+}
+
 legend {
     font-size: 1.8rem;
     font-weight: 600;
