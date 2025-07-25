@@ -1,23 +1,23 @@
 :root {
     /* Paleta de Cores Oficial Sicoob */
-    --sicoob-turquoise: #00AE9D;
+    --sicoob-green: #00995c;
     --sicoob-dark-green: #003641;
     --sicoob-light-green: #C9D200;
     --sicoob-medium-green: #7DB61C;
     --sicoob-purple: #49479D;
     --sicoob-white: #FFFFFF;
 
-    /* Mapeamento para o novo design (Light Theme) */
-    --page-bg: var(--sicoob-turquoise);
+    /* Mapeamento para o design do site oficial */
+    --page-bg: var(--sicoob-white);
     --container-bg: var(--sicoob-white);
-    --primary-accent: var(--sicoob-purple);
+    --primary-accent: var(--sicoob-green);
     --secondary-accent: var(--sicoob-dark-green);
     --highlight-green: var(--sicoob-medium-green);
-    --text-on-light-bg: #333;
-    --text-on-dark-bg: #f0f0f0;
-    --border-color: #dee2e6;
+    --text-color: #333;
+    --text-light: #f8f9fa;
+    --border-color: #ced4da;
     --input-bg: #f8f9fa;
-    --border-radius: 12px;
+    --border-radius: 8px;
     --error-color: #d93025;
     --font-family: 'Poppins', sans-serif;
 }
@@ -36,7 +36,7 @@ html {
 body {
     font-family: var(--font-family);
     background-color: var(--page-bg);
-    color: var(--text-on-dark-bg);
+    color: var(--text-color);
     overflow-x: hidden;
     margin: 0; 
 }
@@ -53,10 +53,10 @@ body {
     max-width: 900px;
     margin: 4rem auto;
     background: var(--container-bg);
-    color: var(--text-on-light-bg);
+    color: var(--text-color);
     border-radius: var(--border-radius);
     padding: clamp(1.5rem, 5vw, 3rem);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border-color);
 }
 
 .section-title {
@@ -66,7 +66,7 @@ body {
     color: var(--secondary-accent);
     margin-bottom: 2.5rem;
     padding-bottom: 1rem;
-    border-bottom: 2px solid var(--secondary-accent);
+    border-bottom: 2px solid var(--primary-accent);
 }
 
 .hero {
@@ -74,8 +74,10 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    min-height: 80vh; /* Reduzido para um visual mais de site */
     text-align: center;
+    background: var(--text-light);
+    padding: 2rem;
 }
 
 .hero .logo {
@@ -86,17 +88,19 @@ body {
 .hero h1 {
     font-size: clamp(2.5rem, 6vw, 4.5rem);
     font-weight: 700;
-    background: linear-gradient(90deg, var(--sicoob-white), #e0e0e0);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--secondary-accent);
     margin-bottom: 1rem;
+    /* Remove o gradiente para um visual mais sólido */
+    background: none;
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: unset;
 }
 
 .hero p {
     font-size: clamp(1rem, 2.5vw, 1.25rem);
     max-width: 600px;
     margin-bottom: 2.5rem;
-    color: var(--text-on-dark-bg);
+    color: var(--text-color);
 }
 
 .cta-button {
@@ -105,19 +109,18 @@ body {
     font-weight: 600;
     text-decoration: none;
     color: var(--sicoob-white);
-    background: linear-gradient(90deg, var(--primary-accent), var(--secondary-accent));
+    background: var(--primary-accent); /* Cor sólida como no site */
     padding: 16px 32px;
-    border-radius: 50px;
+    border-radius: var(--border-radius);
     border: none;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     display: inline-block;
 }
 
 .cta-button:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    background: var(--secondary-accent);
+    transform: translateY(-3px);
 }
 
 /* --- Seção de Regulamento e Prêmios --- */
@@ -175,7 +178,7 @@ body {
 }
 .prize-item i {
     font-size: 1.5rem;
-    color: #f5b700; /* Dourado mais vibrante */
+    color: var(--primary-accent);
     margin-right: 1rem;
 }
 
@@ -203,16 +206,16 @@ label {
     display: block;
     margin-bottom: 0.5rem;
     font-weight: 600;
-    color: var(--text-on-light-bg);
+    color: var(--text-color);
 }
 
 input[type="text"], textarea {
     width: 100%;
     padding: 14px;
-    background: var(--input-bg);
+    background: var(--sicoob-white);
     border: 1px solid var(--border-color);
-    border-radius: 8px;
-    color: var(--text-on-light-bg);
+    border-radius: var(--border-radius);
+    color: var(--text-color);
     font-family: var(--font-family);
     font-size: 1rem;
     transition: all 0.3s ease;
@@ -221,22 +224,22 @@ input[type="text"], textarea {
 input[type="text"]:focus, textarea:focus {
     outline: none;
     border-color: var(--primary-accent);
-    box-shadow: 0 0 0 3px rgba(0, 174, 157, 0.25);
+    box-shadow: 0 0 0 3px rgba(0, 153, 92, 0.25);
 }
 
 input:-webkit-autofill,
 input:-webkit-autofill:hover, 
 input:-webkit-autofill:focus, 
 input:-webkit-autofill:active {
-    -webkit-box-shadow: 0 0 0 30px var(--input-bg) inset !important;
-    -webkit-text-fill-color: var(--text-on-light-bg) !important;
+    -webkit-box-shadow: 0 0 0 30px var(--sicoob-white) inset !important;
+    -webkit-text-fill-color: var(--text-color) !important;
 }
 
 .file-label {
     display: inline-block;
     padding: 12px 20px;
     background: #e9ecef;
-    color: var(--text-on-light-bg);
+    color: var(--text-color);
     border: 1px solid var(--border-color);
     border-radius: 8px;
     cursor: pointer;
