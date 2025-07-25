@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copa Comunica Sicoob Nordeste 2025 | Participe Agora!</title>
+    
+    <!-- Ícones e Fontes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Estilos CSS -->
+    <style>
+        :root {
+            --sicoob-turquoise: #00a99d;
+            --sicoob-green: #00995c;
+            --dark-bg: #10121a;
+            --glass-bg: rgba(16, 18, 26, 0.6);
+            --secondary-glow: #4a00e0;
+            --text-light: #f0f0f0;
+            --text-dark: #333;
+            --border-color: rgba(255, 255, 255, 0.2);
+            --border-radius: 12px;
+            --font-family: 'Poppins', sans-serif;
+        }
+
+        /* --- Reset Básico e Fundo Temático --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--dark-bg);
+            /* Imagem de fundo com tema de comunicação/redes */
+            background-image: linear-gradient(rgba(16, 18, 26, 0.8), rgba(16, 18, 26, 0.95)), url('https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Efeito de paralaxe */
+            color: var(--text-light);
+            overflow-x: hidden;
+        }
+
+        /* --- Seções Principais --- */
+        .page-wrapper {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            padding: 2rem 1rem;
+        }
+
+        .hero {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        .hero .logo {
+            max-width: 220px; /* Aumentado para a nova logo */
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 700;
+            /* Gradiente com o novo turquesa */
+            background: linear-gradient(90deg, var(--sicoob-turquoise), var(--text-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            max-width: 600px;
+            margin-bottom: 2.5rem;
+            color: rgba(240, 240, 240, 0.8);
+        }
+
+        /* --- Botão Principal com Efeito Glow --- */
+        .cta-button {
+            font-family: var(--font-family);
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            color: var(--text-light);
+            /* Gradiente atualizado */
+            background: linear-gradient(90deg, var(--secondary-glow), var(--sicoob-turquoise));
+            padding: 16px 32px;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(0, 169, 157, 0.5);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 35px rgba(0, 169, 157, 0.7);
+        }
+
+        /* --- Container Principal com Efeito Glassmorphism --- */
+        .main-content {
+            max-width: 900px;
+            margin: 4rem auto;
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-radius: var(--border-radius);
+            border: 1px solid var(--border-color);
+            padding: clamp(1.5rem, 5vw, 3rem);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        /* --- Estilos do Formulário --- */
+        legend {
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            width: 100%;
+            border-bottom: 2px solid var(--sicoob-turquoise);
+            padding-bottom: 1rem;
+        }
+
+        .form-group { margin-bottom: 1.5rem; }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: rgba(240, 240, 240, 0.9);
+        }
+
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 14px;
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: var(--text-light);
+            font-family: var(--font-family);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        input[type="text"]:focus, textarea:focus {
+            outline: none;
+            border-color: var(--sicoob-turquoise);
+            box-shadow: 0 0 15px rgba(0, 169, 157, 0.5);
+        }
+
+        .file-label {
+            display: inline-block;
+            padding: 12px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px dashed var(--border-color);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .file-label:hover { background: rgba(255, 255, 255, 0.2); border-color: var(--sicoob-turquoise); }
+        .file-input { display: none; }
+        .file-preview { margin-top: 10px; font-size: 0.9em; opacity: 0.8; }
+
+        .criterion-block {
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            background: rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .criterion-block:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        .criterion-block h4 { display: flex; align-items: center; margin-top: 0; font-size: 1.2rem; }
+        .criterion-block h4 i { color: var(--sicoob-turquoise); margin-right: 1rem; font-size: 1.5rem; }
+
+        .success-message {
+            color: #d4edda; background-color: rgba(21, 87, 36, 0.7);
+            border: 1px solid #c3e6cb; padding: 1rem;
+            border-radius: 8px; text-align: center; margin-top: 1.5rem; display: none;
+        }
+
+        /* --- Animações de Rolagem --- */
+        .reveal {
+            position: relative;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page-wrapper">
+        <!-- Seção Hero -->
+        <section class="hero">
+            <img src="https://logodownload.org/wp-content/uploads/2017/11/sicoob-logo-2.png" alt="Logo Sicoob" class="logo">
+            <h1>Copa Comunica 2025</h1>
+            <p>Eleve a comunicação da sua agência a um novo patamar e mostre que o Sicoob Nordeste é referência em excelência e inovação.</p>
+            <a href="#form-section" class="cta-button">Participar Agora!</a>
+        </section>
+
+        <!-- Conteúdo Principal com Formulário -->
+        <main id="form-section" class="main-content reveal">
+            <form id="copaForm" action="https://formspree.io/f/xxxxxxxx" method="POST" novalidate>
+                <fieldset>
+                    <legend>Formulário de Inscrição</legend>
+                    
+                    <div class="form-group">
+                        <label for="coopNome">Nome da Cooperativa Singular:</label>
+                        <input type="text" id="coopNome" name="coopNome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="paNome">Nome e/ou Número do PA:</label>
+                        <input type="text" id="paNome" name="paNome" required>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Checklist de Evidências</legend>
+                    <div class="criterion-block"><h4><i class="fas fa-store"></i>Critério 1: Fachada</h4><div class="form-group"><label for="fileFachada" class="file-label">Anexar Fotos da Fachada</label><input type="file" id="fileFachada" name="fileFachada" class="file-input" multiple accept="image/*" required><div class="file-preview"></div></div></div>
+                    <div class="criterion-block"><h4><i class="fas fa-map-signs"></i>Critério 2: Sinalização Externa</h4><div class="form-group"><label for="fileSinalizacao" class="file-label">Anexar Fotos do Totem/Placa</label><input type="file" id="fileSinalizacao" name="fileSinalizacao" class="file-input" multiple accept="image/*" required><div class="file-preview"></div></div></div>
+                    <div class="criterion-block"><h4><i class="fas fa-bullhorn"></i>Critério 3: Comunicação Interna</h4><div class="form-group"><label for="fileComunicacao" class="file-label">Anexar Fotos dos Materiais</label><input type="file" id="fileComunicacao" name="fileComunicacao" class="file-input" multiple accept="image/*" required><div class="file-preview"></div></div></div>
+                    <div class="criterion-block"><h4><i class="fas fa-tv"></i>Critério 4: Mídia Digital</h4><div class="form-group"><label for="fileMidia" class="file-label">Anexar Foto/Vídeo da TV</label><input type="file" id="fileMidia" name="fileMidia" class="file-input" multiple accept="image/*,video/*" required><div class="file-preview"></div></div></div>
+                    <div class="criterion-block"><h4><i class="fas fa-couch"></i>Critério 5: Ambiente e Estrutura</h4><div class="form-group"><label for="fileAmbiente" class="file-label">Anexar Fotos do Ambiente</label><input type="file" id="fileAmbiente" name="fileAmbiente" class="file-input" multiple accept="image/*" required><div class="file-preview"></div></div></div>
+                    <div class="criterion-block"><h4><i class="fas fa-user-tie"></i>Critério 6: Equipe Engajada</h4><div class="form-group"><label for="fileEquipe" class="file-label">Anexar Foto da Equipe</label><input type="file" id="fileEquipe" name="fileEquipe" class="file-input" multiple accept="image/*" required><div class="file-preview"></div></div></div>
+                </fieldset>
+
+                <button type="submit" class="cta-button" style="width: 100%;">Enviar Inscrição</button>
+                <div class="success-message"></div>
+            </form>
+        </main>
+    </div>
+
+    <!-- Scripts JavaScript -->
+    <script>
+        // --- Animações de Rolagem ---
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // --- Lógica do Formulário ---
+        const form = document.getElementById('copaForm');
+        form.addEventListener('change', function(e) {
+            if (e.target.matches('.file-input')) {
+                const previewContainer = e.target.closest('.form-group').querySelector('.file-preview');
+                if (previewContainer) {
+                    previewContainer.textContent = e.target.files.length > 0 ? `${e.target.files.length} arquivo(s) selecionado(s)` : '';
+                }
+            }
+        });
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const submitButton = form.querySelector('button[type="submit"]');
+            const successMessage = form.querySelector('.success-message');
+            
+            submitButton.textContent = 'Enviando...';
+            submitButton.disabled = true;
+
+            const formData = new FormData(form);
+            fetch(form.action, {
+                method: form.method,
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            }).then(response => {
+                if (response.ok) {
+                    successMessage.textContent = 'Inscrição enviada com sucesso! Boa sorte!';
+                    successMessage.style.display = 'block';
+                    form.reset();
+                    document.querySelectorAll('.file-preview').forEach(el => el.textContent = '');
+                } else {
+                    response.json().then(data => {
+                        alert(data.errors ? data.errors.map(err => err.message).join(', ') : 'Ocorreu um erro.');
+                    });
+                }
+            }).catch(error => {
+                alert('Erro de conexão. Tente novamente.');
+            }).finally(() => {
+                submitButton.textContent = 'Enviar Inscrição';
+                submitButton.disabled = false;
+            });
+        });
+
+    </script>
+</body>
+</html>

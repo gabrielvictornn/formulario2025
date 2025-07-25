@@ -1,0 +1,278 @@
+:root {
+    /* Paleta de Cores Oficial Sicoob */
+    --sicoob-turquoise: #00AE9D;
+    --sicoob-dark-green: #003641;
+    --sicoob-light-green: #C9D200;
+    --sicoob-medium-green: #7DB61C;
+    --sicoob-purple: #49479D;
+    --sicoob-white: #FFFFFF;
+
+    /* Mapeamento para o design */
+    --dark-bg: var(--sicoob-dark-green);
+    --glass-bg: rgba(0, 26, 33, 0.6);
+    --primary-accent: var(--sicoob-turquoise);
+    --secondary-accent: var(--sicoob-purple);
+    --highlight-green: var(--sicoob-medium-green);
+    --text-light: #f0f0f0;
+    --border-color: rgba(0, 174, 157, 0.3);
+    --border-radius: 12px;
+    --error-color: #ff4d4d;
+    --font-family: 'Poppins', sans-serif;
+}
+
+/* --- Reset Básico e Fundo Temático --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    overflow-x: hidden;
+}
+
+/* --- Seções Principais e Layout --- */
+.page-wrapper {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    padding: 2rem 1rem;
+}
+
+.content-section {
+    max-width: 900px;
+    margin: 4rem auto;
+    background: var(--glass-bg);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    padding: clamp(1.5rem, 5vw, 3rem);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    color: var(--primary-accent);
+    margin-bottom: 2.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--primary-accent);
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+}
+
+.hero .logo {
+    max-width: 220px;
+    margin-bottom: 2rem;
+}
+
+.hero h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 700;
+    background: linear-gradient(90deg, var(--primary-accent), var(--sicoob-white));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    max-width: 600px;
+    margin-bottom: 2.5rem;
+    color: rgba(240, 240, 240, 0.8);
+}
+
+.cta-button {
+    font-family: var(--font-family);
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--sicoob-white);
+    background: linear-gradient(90deg, var(--secondary-accent), var(--primary-accent));
+    padding: 16px 32px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(0, 174, 157, 0.5);
+    display: inline-block;
+}
+
+.cta-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 35px rgba(0, 174, 157, 0.7);
+}
+
+/* --- Seção de Regulamento e Prêmios --- */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.info-card {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+}
+
+.info-card h3 {
+    color: var(--primary-accent);
+    margin-bottom: 1rem;
+}
+
+.info-card ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.info-card li {
+    margin-bottom: 0.75rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.info-card li::before {
+    content: '✓';
+    color: var(--highlight-green);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.prize-list h3 {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.prize-item {
+    display: flex;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+.prize-item i {
+    font-size: 1.5rem;
+    color: #ffd700;
+    margin-right: 1rem;
+}
+
+/* --- Estilos do Formulário --- */
+legend {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--text-light);
+    margin-bottom: 2rem;
+    width: 100%;
+    border-bottom: 1px solid var(--primary-accent);
+    padding-bottom: 1rem;
+}
+
+.form-group { margin-bottom: 1.5rem; }
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: rgba(240, 240, 240, 0.9);
+}
+
+input[type="text"], textarea {
+    width: 100%;
+    padding: 14px;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-light);
+    font-family: var(--font-family);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary-accent);
+    box-shadow: 0 0 15px rgba(0, 174, 157, 0.5);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px var(--dark-bg) inset !important;
+    -webkit-text-fill-color: var(--text-light) !important;
+}
+
+.file-label {
+    display: inline-block;
+    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px dashed var(--border-color);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.file-label:hover { background: rgba(255, 255, 255, 0.2); border-color: var(--primary-accent); }
+.file-input { display: none; }
+.file-preview { margin-top: 10px; font-size: 0.9em; opacity: 0.8; }
+
+.support-links {
+    text-align: center;
+    margin-top: 2rem;
+}
+.support-links .cta-button {
+    margin: 0.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--border-color);
+}
+.support-links .cta-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: var(--primary-accent);
+}
+
+.success-message {
+    color: #d4edda; background-color: rgba(21, 87, 36, 0.7);
+    border: 1px solid #c3e6cb; padding: 1rem;
+    border-radius: 8px; text-align: center; margin-top: 1.5rem; display: none;
+}
+
+.error-message {
+    color: var(--error-color);
+    font-size: 0.875rem;
+    margin-top: 5px;
+}
+input.invalid {
+    border-color: var(--error-color) !important;
+    box-shadow: 0 0 15px rgba(255, 77, 77, 0.5) !important;
+}
+
+/* --- Animações de Rolagem --- */
+.reveal {
+    position: relative;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
